@@ -1,2 +1,4 @@
-# go-chain
-A modular blockchain implementation for study purposes - written in Go
+# Go-chain (WIP)
+
+A modular blockchain implementation for study purposes - written in Go.
+
