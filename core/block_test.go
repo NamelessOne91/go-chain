@@ -45,3 +45,19 @@ func TestBlock_Encode_Decode(t *testing.T) {
 	assert.Nil(t, bDecode.DecodeBinary(buf))
 	assert.Equal(t, b, bDecode)
 }
+
+func TestBlockHash(t *testing.T) {
+	b := &Block{
+		Header: Header{
+			Version:   1,
+			PrevBlock: types.RandomHash(),
+			Timestamp: uint64(time.Now().UnixNano()),
+			Height:    10,
+			Nonce:     937868423,
+		},
+		Transactions: []Transaction{},
+	}
+
+	h := b.Hash()
+	assert.False(t, h.IsZero())
+}
