@@ -3,6 +3,7 @@ package core
 import "io"
 
 type Transaction struct {
+	Data []byte
 }
 
 func (t *Transaction) DecodeBinary(r io.Reader) error {
